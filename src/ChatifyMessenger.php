@@ -116,7 +116,7 @@ class ChatifyMessenger
             // Get attachment and attachment title
             $att = explode(',',$msg->attachment);
             $attachment       = $att[0];
-            $attachment_title = $att[1];
+            $attachment_title = htmlentities(trim($att[1]), ENT_QUOTES, 'UTF-8');
 
             // determine the type of the attachment
             $ext = pathinfo($attachment, PATHINFO_EXTENSION);
