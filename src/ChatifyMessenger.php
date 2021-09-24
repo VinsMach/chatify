@@ -171,7 +171,7 @@ class ChatifyMessenger
         $message->type = $data['type'];
         $message->from_id = $data['from_id'];
         $message->to_id = $data['to_id'];
-        $message->body = $data['body'];
+        $message->body = htmlentities(trim($data['body']), ENT_QUOTES, 'UTF-8');
         $message->attachment = $data['attachment'];
         $message->save();
     }
